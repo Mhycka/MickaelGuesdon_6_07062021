@@ -12,11 +12,9 @@ fetch(myUrl , {method : "GET"})
     let sectionPhotographers = document.getElementById('photographers');
 
     dataPhotographers.forEach((photographe) =>{
-        // console.log(photographe.tags)
-    
         let cardPhotographers = document.createElement('article');
 
-        cardPhotographers.className = photographe.tags.join(' ') + ' articlePh';
+        cardPhotographers.className = photographe.tags.join(' ') + ' cardphotograph';
 
         let templatePhotographer = `
             <a href="photographers.html?id=${photographe.id}" title="${photographe.name}">
@@ -33,3 +31,4 @@ fetch(myUrl , {method : "GET"})
         cardPhotographers.innerHTML = templatePhotographer;
 
     })
+})
