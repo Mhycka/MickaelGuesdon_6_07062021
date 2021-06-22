@@ -1,4 +1,5 @@
 
+
 let myUrl = 'Data/FisheyeData.json';
 fetch(myUrl , {method : "GET"})
 .then(data => {
@@ -6,8 +7,8 @@ fetch(myUrl , {method : "GET"})
 }).then(datas =>{
 
     let dataPhotographers = datas.photographers
-    console.log(datas)
-    console.log(dataPhotographers)
+//    console.log(datas)
+//    console.log(dataPhotographers)
 
     let sectionPhotographers = document.getElementById('photographers');
 
@@ -16,7 +17,7 @@ fetch(myUrl , {method : "GET"})
 
         cardPhotographers.className = photographe.tags.join(' ') + ' cardphotograph';
 
-        let templatePhotographer = `
+        let templateCardPhotographer = `
             <a href="photographers.html?id=${photographe.id}" title="${photographe.name}">
                 <img src="${photographe.portrait}" alt="${photographe.alt}">
                 <h2 class="name">${photographe.name}</h2>
@@ -28,7 +29,6 @@ fetch(myUrl , {method : "GET"})
                 `<li data-filter="${tag}">#${tag}</li>`).join("")}</ul>`
 
         sectionPhotographers.appendChild(cardPhotographers);
-        cardPhotographers.innerHTML = templatePhotographer;
-
+        cardPhotographers.innerHTML = templateCardPhotographer;
     })
 })
