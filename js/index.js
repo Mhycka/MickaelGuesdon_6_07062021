@@ -1,5 +1,4 @@
 
-
 let myUrl = 'Data/FisheyeData.json';
 fetch(myUrl , {method : "GET"})
 .then(data => {
@@ -25,7 +24,7 @@ fetch(myUrl , {method : "GET"})
             <p class="location">${photographe.city}, ${photographe.country}</p>
             <p class="tagline">${photographe.tagline}</p>
             <p class="price">${photographe.price}€/jour</p>
-            <ul class="filter">${photographe.tags.map(tag =>
+            <ul class="filter ph-tags">${photographe.tags.map(tag =>
                 `<li data-filter="${tag}">#${tag}</li>`).join("")}</ul>`
 
         sectionPhotographers.appendChild(cardPhotographers);
