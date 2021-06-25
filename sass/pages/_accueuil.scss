@@ -45,6 +45,14 @@
   }
 }
 
+nav ul li:hover,li.actived {
+  background-color: #901C1C;
+  color: #fff;
+}
+li.actived a{
+  color: #fff;
+}
+
 .tags {
   display: flex;
   justify-content: center;
