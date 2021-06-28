@@ -6,9 +6,6 @@ fetch(myUrl , {method : "GET"})
 }).then(datas =>{
 
     let dataPhotographers = datas.photographers
-    console.log(datas)
-    console.log(dataPhotographers)
-
     let sectionPhotographers = document.getElementById('photographers');
 
     dataPhotographers.forEach((photographe) =>{
@@ -32,7 +29,8 @@ fetch(myUrl , {method : "GET"})
     })
 
 
-    const myFiltres = filtres();
+    const myFiltres = filtres(); 
     myFiltres.filterTags()
-
+    myFiltres.filterTagPh()
+    
 })

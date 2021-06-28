@@ -2,10 +2,13 @@ function filtres() {
 
     let filtres = document.querySelector('ul');
     let articles = document.querySelectorAll('.cardphotograph');
+    let filterPh = document.querySelectorAll('.filter li');
 
     function filterTags (){
         filtres.addEventListener('click', event => {
+            console.log(event)
             let elt = event.target.parentNode;
+            console.log(event.target.parentNode)
             let classValue = elt.classList.value;
             if (-1 ===classValue.indexOf('actived')) {
                 elt.classList.add('actived')
@@ -15,6 +18,21 @@ function filtres() {
             this.domArticles(articles);
         });
     };
+
+    function filterTagPh() {
+        filterPh.addEventListener('click', event => {
+            console.log(event)
+            let elt2 = event.target;
+            console.log(event.target)
+            let classValue = elt2.classList.value;
+            if (1 ===classValue.indexOf('actived')) {
+                elt2.classList.add('actived')
+            } else {
+                elt2.classList.remove('actived')
+            }
+            this.domArticles(articles);
+        });
+    }
 
     function activeFilters() {
         let currentFilters = document.querySelectorAll('ul li.actived');
@@ -39,7 +57,6 @@ function filtres() {
         let intersection = filters.filter(
             x => classes.includes(x)
         );
-    
         return filters.length == intersection.length;
     }
     
@@ -56,7 +73,9 @@ function filtres() {
     return {
         filtres,
         articles,
+        filterPh,
         filterTags,
+        filterTagPh,
         activeFilters,
         eachFilters,
         domArticles
