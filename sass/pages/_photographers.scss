@@ -1,0 +1,146 @@
+/* HEADER */
+header {
+    align-items: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+header {
+    img {
+        width: 12.5rem;
+    }
+} 
+
+/* HEADER PH PROFIL */
+.ph-city {
+    color: #901c1c;
+    font-size: .9em;
+    margin: 0;
+}
+
+.ph-infos {
+    h2 {
+        color: #D3573C;
+        font-size: 2.4em;
+        font-weight: 400;
+        margin: 0;
+    }
+} 
+
+.ph-profil {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        background: #901c1c;
+        border: none;
+        border-radius: 5px;
+        bottom: 28px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 500;
+        height: 35px;
+        position: fixed;
+        width: 170px;
+    }
+}
+
+.ph-profil{
+    button:hover {
+        background: #651414;
+        transform: scale(1.05);
+    }
+} 
+
+.ph-profil{
+    img {
+        border-radius: 50%;
+        height: 100px;
+        object-fit: cover;
+        width: 100px;
+    }
+} 
+
+.ph-tagline {
+    color: #525252;
+    font-size: .9em;
+    margin: 0;
+}
+
+.ph-tags {
+    border: .5px solid #C4C4C4;
+    border-radius: .6875rem;
+    color: #901C1C;
+    font-size: 12px;
+    margin: 0;
+    padding: .0625rem .375rem;
+    text-decoration: none;
+    transition: all .2s;
+
+    &:hover{
+        background-color: #901C1C;
+        color: #fff;
+    }
+}
+
+/* PH WORKS MEDIAS */
+#ph-works {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 2.8125rem 0;
+    padding: 0 1.25rem;
+}
+
+.btn-like {
+    background: none;
+    border: none;
+    color: #901c1c;
+    font-size: 1.1rem;
+    margin-left: -.3rem;
+}
+
+.ph-work-elt {
+    color: #901c1c;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin: 0 0 .625rem;
+    width: 20.9375rem;
+
+    .fa-heart:hover, img:hover, video:hover {
+        cursor: pointer;
+    }
+
+    .ph-work-title {
+        width: 14.0625rem;
+    }
+
+    img, video{
+        border-radius: .3125rem;
+        height: 11.875rem;
+        object-fit: cover;
+        width: 20.9375rem;
+    }
+}
+
+.ph-work-elt-text {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+}
+
+.ph-work-title {
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.works-sort {
+    display: none;
+}
+
+#box {
+    display: none;
+}

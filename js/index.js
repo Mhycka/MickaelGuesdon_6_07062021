@@ -30,7 +30,11 @@ fetch(myUrl , {method : "GET"})
 
 
     const myFiltres = filtres(); 
-    myFiltres.filterTags()
-    myFiltres.filterTagPh()
-    
+    myFiltres.filterTags();
+
+    const myfiltresPh = filtresPh(); 
+    myfiltresPh.filtertagPh();
+
+   // const myFiltresPh = filtertagPh();
+    //myFiltresPh.tagPh();
 })
