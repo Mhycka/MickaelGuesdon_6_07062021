@@ -1,4 +1,3 @@
-
 let myUrl = 'Data/FisheyeData.json';
 fetch(myUrl , {method : "GET"})
 .then(data => {
@@ -31,6 +30,7 @@ fetch(myUrl , {method : "GET"})
 
     const myFiltres = filtres(); 
     myFiltres.filterTags();
+    // myFiltres.test(dataPhotographers);
 
     const myfiltresPh = filtresPh(); 
     myfiltresPh.filtertagPh();

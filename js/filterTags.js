@@ -4,6 +4,24 @@ function filtres() {
     let articles = document.querySelectorAll('.cardphotograph');
     let filterPh = document.querySelectorAll('.filter li');
 
+    function test(photographes){ 
+        console.log(photographes)
+
+        let Afficher = []
+        photographes.forEach( (photographe) =>{
+            if(photographe.tags.includes('portrait')){
+                console.log(photographe)
+                Afficher.push(photographe)
+            }
+        })
+
+        console.log(Afficher)
+        //CreateHTML(Afficher)
+        
+    }
+    
+    //Créert HTML en fonction d'un tableau de donnée
+
     function filterTags (){
         filtres.addEventListener('click', event => {
             //console.log(event)
@@ -59,6 +77,7 @@ function filtres() {
     return {
         filtres,
         articles,
+        test,
         filterTags,
         activeFilters,
         eachFilters,
