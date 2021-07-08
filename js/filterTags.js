@@ -2,39 +2,37 @@ function filtres() {
 
     let filtres = document.querySelector('ul');
     let articles = document.querySelectorAll('.cardphotograph');
-    let filterPh = document.querySelectorAll('.filter li');
-
-    function test(photographes){ 
-        console.log(photographes)
-
-        let Afficher = []
-        photographes.forEach( (photographe) =>{
-            if(photographe.tags.includes('portrait')){
-                console.log(photographe)
-                Afficher.push(photographe)
-            }
-        })
-
-        console.log(Afficher)
-        //CreateHTML(Afficher)
-        
-    }
     
-    //Créert HTML en fonction d'un tableau de donnée
+    function ArrayPh(photographes){
+        let Afficher = []
+        //const array1 = ['travel','portrait','events','animals','sports','architecture','fasshion', 'art'];
+        photographes.forEach( (photographe) =>{
+            if(photographe.tags.filter(photographe => photographe.tags == tags)){
+                //console.log(photographe)
+                Afficher.push(photographe)
+                //console.log(photographe.tags)
+            }
+            this.domArticles(articles)
+        })
+        console.log(Afficher)
+        //CreateHTML(Afficher);
+    };
+    
+    //Créer HTML en fonction d'un tableau de donnée
 
     function filterTags (){
         filtres.addEventListener('click', event => {
             //console.log(event)
             let elt = event.target.parentNode;
-            //console.log(event.target.parentNode)
+            console.log(event.target.parentNode)
             let classValue = elt.classList.value;
             if (-1 ===classValue.indexOf('actived')) {
                 elt.classList.add('actived')
             } else {
                 elt.classList.remove('actived')
-            }
+            }    
             this.domArticles(articles);
-        });
+        })
     };
 
     function activeFilters() {
@@ -48,7 +46,6 @@ function filtres() {
             // console.log(currentFilter.querySelector('a').getAttribute("data-filter"));
             filterSelect.push(currentFilter.querySelector('a').getAttribute("data-filter"))
         })
-    
         return filterSelect;
     }
     
@@ -61,7 +58,7 @@ function filtres() {
             x => classes.includes(x)
         );
         return filters.length == intersection.length;
-    }
+    };
     
     function domArticles(articles) {
         //console.log(articles)
@@ -77,7 +74,7 @@ function filtres() {
     return {
         filtres,
         articles,
-        test,
+        ArrayPh,
         filterTags,
         activeFilters,
         eachFilters,
@@ -110,7 +107,7 @@ function filtresPh () {
              //console.log(articles)
             });
         });
-    }
+    };
 
     function activeFilters() {
         let currentFilters = document.querySelectorAll('ul li.actived');
@@ -122,10 +119,9 @@ function filtresPh () {
             // console.log(currentFilter);
             // console.log(currentFilter..getAttribute("data-filter"));
             filterSelect.push(currentFilter.getAttribute("data-filter"))
-        })
-    
+        })    
         return filterSelect;
-    }
+    };
     
     function eachFilters(article) {
         let filters = this.activeFilters();
@@ -136,7 +132,7 @@ function filtresPh () {
             x => classes.includes(x)
         );
         return filters.length == intersection.length;
-    }
+    };
 
     function domTagsPh (articles) {
         articles.forEach(article => {

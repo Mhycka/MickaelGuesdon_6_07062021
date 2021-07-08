@@ -30,11 +30,8 @@ fetch(myUrl , {method : "GET"})
 
     const myFiltres = filtres(); 
     myFiltres.filterTags();
-    // myFiltres.test(dataPhotographers);
+    myFiltres.ArrayPh(dataPhotographers);
 
     const myfiltresPh = filtresPh(); 
     myfiltresPh.filtertagPh();
-
-   // const myFiltresPh = filtertagPh();
-    //myFiltresPh.tagPh();
 })

@@ -6,7 +6,7 @@ fetch(myUrl , {method : "GET"})
 
     let dataPhotographers = datas.photographers;
     let dataMedias = datas.media;
-    console.log(datas.media)
+    //console.log(datas.media)
 
     const id = window.location.search.split('id=')[1];
         const photographers = !id ? dataPhotographers : dataPhotographers.filter(photographer => photographer.id == id);
@@ -27,7 +27,10 @@ fetch(myUrl , {method : "GET"})
         PhotographerProfil.innerHTML = templatePhotographerProfil;
 
         const SectionMedia = Media();
-        SectionMedia.createimgHTML();
-
-});
+        SectionMedia.createHTML(dataMedias);
+        SectionMedia.renderMedia(dataMedias);
+        SectionMedia.builder(dataMedias);
+        //SectionMedia.createimgHTML(dataMedias);
+        //SectionMedia.createvidHTML(dataMedias)
+    });
 
