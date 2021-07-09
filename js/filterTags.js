@@ -14,7 +14,7 @@ function filtres() {
             }
             this.domArticles(articles)
         })
-        console.log(Afficher)
+        //console.log(Afficher)
         //CreateHTML(Afficher);
     };
     
@@ -24,7 +24,7 @@ function filtres() {
         filtres.addEventListener('click', event => {
             //console.log(event)
             let elt = event.target.parentNode;
-            console.log(event.target.parentNode)
+            //console.log(event.target.parentNode)
             let classValue = elt.classList.value;
             if (-1 ===classValue.indexOf('actived')) {
                 elt.classList.add('actived')
@@ -150,3 +150,12 @@ function filtresPh () {
         domTagsPh
     }
 };
+
+
+
+
+
+//REndre HTML photographe (Tablea de data)
+//Savoir les filtre actif
+//update filtre active/Noactif
+//Filtre les dataphotodra -> new array avec les photogrape a affiché -> renderPhotgrape
