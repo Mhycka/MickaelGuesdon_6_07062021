@@ -29,10 +29,9 @@ fetch(myUrl , {method : "GET"})
     PhotographerProfil.innerHTML = templatePhotographerProfil;
 
     const SectionMedia = Media();
-    // SectionMedia.createHTML(dataMedias);
-    // SectionMedia.renderMedia(dataMedias);
     SectionMedia.builder(dataMedias, photographers[0] , id);
-    //SectionMedia.createimgHTML(dataMedias);
-    //SectionMedia.createvidHTML(dataMedias)
+
+    const FormData = Form();
+    FormData.launchModal();
 });
 
