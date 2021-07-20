@@ -177,8 +177,11 @@ function filters () {
         this.filtersTop.addEventListener('click', event => {
             let elt = event.target.parentNode;
             let classValue = elt.classList.value;
+            console.log(filterPh)
+            console.log(elt)
             if (-1 ===classValue.indexOf('actived')) {
-                elt.classList.add('actived')
+                elt.classList.add('actived');
+                
             } else {
                 elt.classList.remove('actived')
             }    
@@ -189,6 +192,7 @@ function filters () {
         this.filterPh.forEach( tag => {
             tag.addEventListener("click", event => {
             let elt = event.target.parentNode;
+            console.log(elt)
             let classValue = elt.classList.value;
             if (-1 ===classValue.indexOf('actived')) {
                 elt.classList.add('actived')
@@ -245,8 +249,6 @@ function filters () {
         activeFilters
     }
 }
-    
-
 
 //REndre HTML photographe (Tablea de data)
 //Savoir les filtre actif

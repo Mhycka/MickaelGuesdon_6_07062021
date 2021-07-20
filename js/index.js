@@ -33,7 +33,7 @@ fetch(myUrl , {method : "GET"})
 
     const myFilters = filters(); 
     //myFilters.ArrayPh(dataPhotographers);
-    myFilters.filterTags();
+    myFilters.filterTags(dataPhotographers);
 
     //const myfiltresPh = filtresPh(); 
     //myfiltresPh.filtertagPh();

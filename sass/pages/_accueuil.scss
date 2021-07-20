@@ -89,6 +89,7 @@
 
   a {
     text-decoration: none;
+    color: $primary-color
   }
 }
 
@@ -177,7 +178,6 @@ ul {
 
     &:hover a, &.actived a {
       cursor: pointer;
-      background: $primary-color;
       border-color: $primary-color;
       color :white
     }
