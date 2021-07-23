@@ -4,6 +4,11 @@ fetch(myUrl , {method : "GET"})
     return data.json()
 }).then(datas =>{
 
+    // const URLParam = new URLSearchParams(window.location.search)
+    // const id = URLParam.get('tags');
+
+    // //const photographers = !tags ? dataPhotographers : dataPhotographers.filter(photographer => photographer.tags == tags);
+
     let dataPhotographers = datas.photographers
     let sectionPhotographers = document.getElementById('photographers');
 
@@ -22,7 +27,7 @@ fetch(myUrl , {method : "GET"})
             <p class="price">${photographe.price}€/jour</p>
             <ul class="filter ph-tags">${photographe.tags.map(tag =>
                 `<li data-filter="${tag}">
-                    <a href="#" class ="${tag}" title="${tag}" data-filter="${tag}">${tag}</a>
+                    <a href=#" class ="${tag}" title="${tag}" data-filter="${tag}">${tag}</a>
                 </li>`).join("")}
             </ul>`
 
@@ -32,8 +37,9 @@ fetch(myUrl , {method : "GET"})
 
 
     const myFilters = filters(); 
-    //myFilters.ArrayPh(dataPhotographers);
-    myFilters.filterTags(dataPhotographers);
+    myFilters.filterTags();
+    //myFilters.builderTags(dataPhotographers);
+    // myFilters.addTagParamToURL();
 
     //const myfiltresPh = filtresPh(); 
     //myfiltresPh.filtertagPh();
