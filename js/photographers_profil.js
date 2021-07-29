@@ -31,7 +31,10 @@ fetch(myUrl , {method : "GET"})
     const SectionMedia = Media();
     SectionMedia.builder(dataMedias, photographers[0] , id);
 
+    const Modal = modalparam();
+    Modal.modal(dataPhotographers);
+
     const FormData = Form();
-    FormData.launchModal();
+    FormData.fields();
 });
 

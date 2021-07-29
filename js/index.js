@@ -26,7 +26,7 @@ fetch(myUrl , {method : "GET"})
             <p class="tagline">${photographe.tagline}</p>
             <p class="price">${photographe.price}€/jour</p>
             <ul class="filter ph-tags">${photographe.tags.map(tag =>
-                `<li data-filter="${tag}">
+                `<li>
                     <a href=#" class ="${tag}" title="${tag}" data-filter="${tag}">${tag}</a>
                 </li>`).join("")}
             </ul>`

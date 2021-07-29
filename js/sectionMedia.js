@@ -57,14 +57,13 @@ function Media () {
                     </div>
                 </div>                
                 `
-                console.log(photographe.name)
                 articlePhWork.innerHTML = workTemplate;
                 sectionPhWorks.appendChild(articlePhWork);
 
                 articlePhWork.classList.add("ph-work-elt");
             }
         })
-    }
+    };
     
     return {
         createimgHTML,

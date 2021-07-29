@@ -153,53 +153,8 @@
 
 
 function filters () {
-    let filters = document.querySelectorAll(' li');
-    //let filtersTop = document.querySelector('ul');
+    let filters = document.querySelectorAll(' li a');
     let articles = document.querySelectorAll('.cardphotograph');
-    //let filterPh = document.querySelectorAll('.filter li');
-    let filterselect = document.getElementsByClassName('actived');
-
-    //let tagsActif = [];
-
-    // function ArrayPh(photographes){
-    //     let Afficher = []
-    //     //console.log(photographes)
-
-    //     const URLParam = new URLSearchParams(window.location.search)
-    //     const tags = URLParam.get('tags');
-
-    //     photographes.forEach( (photographe) =>{
-    //         if(photographe.tags.filter(photographe => photographe.tags == tags)){
-    //             Afficher.push(photographe)
-    //             console.log(photographe.tags)
-    //         }
-    //         return Afficher;
-    //     })
-    //     //console.log(Afficher)
-    // };
-
-
-    // function addTagParamToURL (tagToAdd){
-    //     if (tagToAdd == "") return;
-    //     console.log(tagToAdd)
-        
-    //     let url = "#";
-    //     let tagParams = getParamsFromURL("tag");
-        
-    //     if (tagParams.includes(tagToAdd))
-    //         tagParams = tagParams.filter((tag) => tag !== tagToAdd);
-    //     else tagParams.push(tagToAdd);
-        
-    //     tagParams.forEach((tag, index) => {
-    //         if (index === 0) url += `?tag=${tag}`;
-    //         else url += `&tag=${tag}`;
-    //     });
-    //     window.history.pushState({}, "", url);
-    //     };
-
-    // Si tag déffiné
-        //Afficher toutes les tag de coucleur
-
 
     function filterTags (){
     //     this.filtersTop.addEventListener('click', event => {
@@ -225,18 +180,21 @@ function filters () {
         
         this.filters.forEach(filter => {
             filter.addEventListener("click", event =>{
-                let  target= event.target.parentNode;
                 let elt = event.target.dataset.filter;
-                let classValue = target.classList.value;
+                //console.log(elt)
+                //console.log(event)
+                //console.log(event.target)
                 let tags = document.querySelectorAll('[data-filter]');
-                
+
                 tags.forEach(tag => { 
-                    if (-1 === classValue.indexOf('actived')) {
+                    let tagAll = tag.dataset.filter;
+                    if ( elt === tagAll) {
                         tag.parentNode.classList.add('actived');
                     } else {
                         tag.parentNode.classList.remove('actived');
                     }
                 })
+                this.domArticles(this.articles);
             })
         });
 
@@ -285,7 +243,8 @@ function filters () {
         let filterSelect = [];
 
         currentFilters.forEach(function(currentFilter) {
-            filterSelect.push(currentFilter.querySelector('a').getAttribute("data-filter"))
+                filterSelect.push(currentFilter.querySelector('a').getAttribute("data-filter"))
+
         })    
         return filterSelect;
     };
@@ -314,19 +273,10 @@ function filters () {
 
     return {
         filters,
-        //filtersTop,
         articles,
-        //filterPh,
         filterTags,
-        //builderTags,
-        //ArrayPh,
         domArticles,
         eachFilters,
         activeFilters
     }
 }
-
-//REndre HTML photographe (Tablea de data)
-//Savoir les filtre actif
-//update filtre active/Noactif
-//Filtre les dataphotodra -> new array avec les photogrape a affiché -> renderPhotgrape
