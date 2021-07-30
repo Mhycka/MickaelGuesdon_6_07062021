@@ -36,5 +36,8 @@ fetch(myUrl , {method : "GET"})
 
     const FormData = Form();
     FormData.fields();
+
+    const Lightbox = LightboxParam();
+    Lightbox.init();
 });
 

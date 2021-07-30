@@ -43,7 +43,7 @@ function Media () {
                 // console.log(mediaFactory)
 
                 let workTemplate = `
-                <a href='#' title=${element.photoName}>
+                <a href='#' title=${element.title}>
                  ${mediaFactory.outerHTML}
                 </a>
                 <div class="ph-work-elt-text">
