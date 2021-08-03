@@ -14,6 +14,7 @@ function Media () {
         let eltVideo = document.createElement('video');
         eltVideo.setAttribute("controls", "controls")
         eltVideo.setAttribute('src', `medias/${name}/${element.video}`);
+        eltVideo.setAttribute('alt', element.title);
         eltVideo.setAttribute('role', 'button');
         eltVideo.className = 'ph-media';
 
