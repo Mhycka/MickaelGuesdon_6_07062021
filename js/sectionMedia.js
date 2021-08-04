@@ -5,7 +5,7 @@ function Media () {
         eltImage.setAttribute('src', `medias/${name}/${element.image}`);
         eltImage.setAttribute('alt', element.title);
         eltImage.setAttribute('role', 'button');
-        eltImage.className = 'ph-media';
+       // eltImage.className = 'ph-media';
 
         return eltImage;
     }
@@ -16,14 +16,15 @@ function Media () {
         eltVideo.setAttribute('src', `medias/${name}/${element.video}`);
         eltVideo.setAttribute('alt', element.title);
         eltVideo.setAttribute('role', 'button');
-        eltVideo.className = 'ph-media';
+        //eltVideo.className = 'ph-media';
 
         return eltVideo;
     }
 
     function renderMedia(element , name) {
         // console.log(element.hasOwnProperty('image'))
-        // console.log(element)
+        //  console.log(element)
+        //  console.log(name)
         let factory = null;
         if (element.hasOwnProperty('image')) {
             factory = this.createimgHTML(element , name);
@@ -44,8 +45,8 @@ function Media () {
                 // console.log(mediaFactory)
 
                 let workTemplate = `
-                <a href='#' title=${element.title}>
-                 ${mediaFactory.outerHTML}
+                <a href='#' class ='ph-media' title=${element.title}>
+                 ${mediaFactory.outerHTML} 
                 </a>
                 <div class="ph-work-elt-text">
                     <h2 class="ph-work-title">${element.title}</h2>

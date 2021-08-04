@@ -38,6 +38,6 @@ fetch(myUrl , {method : "GET"})
     FormData.fields();
 
     const Lightbox = LightboxParam();
-    Lightbox.init();
+    Lightbox.builder();
 });
 
