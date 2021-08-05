@@ -157,26 +157,6 @@ function filters () {
     let articles = document.querySelectorAll('.cardphotograph');
 
     function filterTags (){
-    //     this.filtersTop.addEventListener('click', event => {
-    //         //console.log(dataPhotographers)
-    //         let elt = event.target.parentNode;
-    //         console.log(event.target.dataset.filter);
-    //         let classValue = elt.classList.value;
-    //         //console.log(filterPh.classList)
-    //         if (-1 === classValue.indexOf('actived')) {
-    //             elt.classList.add('actived');
-
-    //             //Foreache sur tout les  tags profils pour mettre la class active
-
-    //             //elt2.add('actived');
-    //             console.log(filterselect)
-    //         } else {
-    //             elt.classList.remove('actived')
-
-    //             // /Foreache sur tout les  tags profils pour REMOVE la class active
-    //         }    
-    //         this.domArticles(this.articles);
-    //     });
         
         this.filters.forEach(filter => {
             filter.addEventListener("click", event =>{
@@ -197,46 +177,8 @@ function filters () {
                 this.domArticles(this.articles);
             })
         });
-
-        //Quand je clique sur un element
-            //Récupére le DATA-filter
-            //Récupére les élement HTML document.querySelectorAll('a.portrait')
-
-            // document.querySelectorAll('a.portrait').forEach( tag => {
-            //     tag.parentNode.classList.add('actived');
-            //     console.log(tag)
-            // });
-                // Si pas de classe active
-                    //Foreahce pour ajouter la classe ()
-                //si déja active
-                    //REmove les class
-
-
-        // this.filterPh.forEach( tag => {
-        //     tag.addEventListener("click", event => {
-        //     // let elt = event.target.parentNode;
-        //     // //console.log(elt)
-        //     // let classValue = elt.classList.value;
-        //     // if (-1 ===classValue.indexOf('actived')) {
-        //     //     elt.classList.add('actived');
-        //     //     console.log(filterselect)
-        //     // } else {
-        //     //     elt.classList.remove('actived')
-        //     // }
-            
-        //      this.domArticles(this.articles);
-        //     });
-        // });
     };
 
-    /*function builderTags(dataPhotographers) {
-        dataPhotographers.forEach(element => {
-            console.log(element.tags)
-            
-        })
-    };*/
-    
-    //Active ou descativer tous mes filtres (Ajouter classe active au header + touts les portrait) 
 
     function activeFilters() {
         let currentFilters = document.querySelectorAll('ul li.actived');
@@ -244,8 +186,8 @@ function filters () {
 
         currentFilters.forEach(function(currentFilter) {
                 filterSelect.push(currentFilter.querySelector('a').getAttribute("data-filter"))
-
-        })    
+        })
+        
         return filterSelect;
     };
 

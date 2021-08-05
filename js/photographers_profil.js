@@ -38,6 +38,13 @@ fetch(myUrl , {method : "GET"})
     FormData.fields();
 
     const Lightbox = LightboxParam();
-    Lightbox.builder();
+    Lightbox.init();
+ 
+    const Likesetting =  likes();
+    Likesetting.likesParam();
+
+    const buttonChoiceSort = buttonChoice();
+    buttonChoiceSort.init(datas, photographers[0] , id , SectionMedia);
+    buttonChoiceSort.dropDown(datas);
 });
 
