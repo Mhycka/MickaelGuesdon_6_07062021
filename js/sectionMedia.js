@@ -5,6 +5,7 @@ function Media () {
         eltImage.setAttribute('src', `medias/${name}/${element.image}`);
         eltImage.setAttribute('alt', element.title);
         eltImage.setAttribute('role', 'button');
+        eltImage.setAttribute('data-type','image');
        // eltImage.className = 'ph-media';
 
         return eltImage;
@@ -16,6 +17,7 @@ function Media () {
         eltVideo.setAttribute('src', `medias/${name}/${element.video}`);
         eltVideo.setAttribute('alt', element.title);
         eltVideo.setAttribute('role', 'button');
+        eltVideo.setAttribute('data-type','video')
         //eltVideo.className = 'ph-media';
 
         return eltVideo;

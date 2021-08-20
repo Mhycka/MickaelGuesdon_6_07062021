@@ -6,77 +6,77 @@ function LightboxParam() {
 
     console.log(getMedias)
         
-    // function builder() {
-    //     getMedias.forEach((mediaWorks, index) => {
-    //         let lightboxParam = document.getElementById('lightbox-body');
-    //         let factory = null;
-    //         // console.log(element)
-    //         //console.log(mediaWorks , index ,  mediaWorks.alt)
+    function builder() {
+        getMedias.forEach((mediaWorks, index) => {
+            let lightboxParam = document.getElementById('lightbox-body');
+            let factory = null;
+            // console.log(element)
+            //console.log(mediaWorks , index ,  mediaWorks.alt)
 
 
-    //         mediaWorks.addEventListener("click", () => {
-    //             //console.log(mediaWorks.src)
-    //             let lightBoxMedia = document.getElementById('works_lightbox_media');
-    //             let lightBoxName = document.getElementById('works_lightbox_name');
-    //             let src = mediaWorks.src;
-    //             let nameSrc =  mediaWorks.alt;
-    //             this.currentIndex = index;
+            mediaWorks.addEventListener("click", () => {
+                //console.log(mediaWorks.src)
+                let lightBoxMedia = document.getElementById('works_lightbox_media');
+                let lightBoxName = document.getElementById('works_lightbox_name');
+                let src = mediaWorks.src;
+                let nameSrc =  mediaWorks.alt;
+                this.currentIndex = index;
 
-    //             console.log(mediaWorks)
+                console.log(mediaWorks)
 
-    //             if (mediaWorks.getAttribute('image')) {                   
-    //                 factory = this.createimgHTML(mediaWorks , alt);
-    //                 document.getElementById('works-lightbox').style.display = 'block';
-    //                 lightBoxMedia.src = src;
-    //                 lightBoxName.innerHTML = nameSrc;
-    //             } else {
-    //                 factory = this.createvidHTML(mediaWorks);
-    //                 document.getElementById('works-lightbox').style.display = 'block';
-    //                 lightBoxMedia.src = src;
-    //                 lightBoxName.innerHTML = nameSrc;
-    //             }
-    //         })
+                if (mediaWorks.getAttribute('image')) {                   
+                    factory = this.createimgHTML(mediaWorks , alt);
+                    document.getElementById('works-lightbox').style.display = 'block';
+                    lightBoxMedia.src = src;
+                    lightBoxName.innerHTML = nameSrc;
+                } else {
+                    factory = this.createvidHTML(mediaWorks);
+                    document.getElementById('works-lightbox').style.display = 'block';
+                    lightBoxMedia.src = src;
+                    lightBoxName.innerHTML = nameSrc;
+                }
+            })
             
-    //     lightboxParam.appendChild(lightBoxDiv);
+        lightboxParam.appendChild(lightBoxDiv);
 
-    //     this.previous(document.querySelector('.left-arrow-lightbox'), getMedias);
-    //     this.next(document.querySelector('.right-arrow-lightbox'), getMedias);
-    //     this.close();
-    //     this.keyboard(getMedias);
-    //     return factory;
-    //     })
-    // };
+        this.previous(document.querySelector('.left-arrow-lightbox'), getMedias);
+        this.next(document.querySelector('.right-arrow-lightbox'), getMedias);
+        this.close();
+        this.keyboard(getMedias);
+        return factory;
+        })
+    };
 
-    // function createimgHTML(getMedias) {
-    //     let eltImage = document.createElement('img');
-    //     eltImage.setAttribute('src', `medias/${alt}/${getMedias.image}`);
-    //     eltImage.setAttribute('alt', getMedias.alt);
-    //     eltImage.setAttribute('id' , 'works_lightbox_media');
+    function createimgHTML(getMedias) {
+        let eltImage = document.createElement('img');
+        eltImage.setAttribute('src', `medias/${alt}/${getMedias.image}`);
+        eltImage.setAttribute('alt', getMedias.alt);
+        eltImage.setAttribute('id' , 'works_lightbox_media');
 
-    //     return eltImage;
-    // };
+        return eltImage;
+    };
 
-    // function createvidHTML(getMedias , alt) {
-    //     let eltVideo = document.createElement('video');
-    //     eltVideo.setAttribute("controls", "controls");
-    //     eltVideo.setAttribute('src', `medias/${alt}/${getMedias.video}`);
-    //     eltVideo.setAttribute('alt', getMedias.alt);
-    //     eltVideo.setAttribute('id', 'works_lightbox_media');
+    function createvidHTML(getMedias , alt) {
+        let eltVideo = document.createElement('video');
+        eltVideo.setAttribute("controls", "controls");
+        eltVideo.setAttribute('src', `medias/${alt}/${getMedias.video}`);
+        eltVideo.setAttribute('alt', getMedias.alt);
+        eltVideo.setAttribute('id', 'works_lightbox_media');
 
-    //     return eltVideo;
-    // };
+        return eltVideo;
+    };
 
-    // function renderMedia(getMedias , alt) {
-    //     // console.log(element.hasOwnProperty('image'))
-    //     // console.log(element)
-    //     let factory = null;
-    //     if (getMedias.hasOwnProperty('image')) {
-    //         factory = this.createimgHTML(getMedias, alt);
-    //     } else if (getMedias.hasOwnProperty('video')) {
-    //         factory = this.createvidHTML(getMedias , alt);
-    //     }
-    //     return factory;
-    // };
+    function renderMedia(getMedias , alt) {
+        // console.log(element.hasOwnProperty('image'))
+        // console.log(element)
+        let factory = null;
+        if (getMedias.hasOwnProperty('image')) {
+            factory = this.createimgHTML(getMedias, alt);
+        } else if (getMedias.hasOwnProperty('video')) {
+            factory = this.createvidHTML(getMedias , alt);
+        }
+        return factory;
+    };
 
 
     function init() {
@@ -85,21 +85,45 @@ function LightboxParam() {
 
         getMedias.forEach((mediaWorks, index) => mediaWorks.addEventListener("click", () => {
 
-            console.log(mediaWorks , index ,  mediaWorks.alt)
+            let lightBoxMedia = document.getElementById('lightbox_media');
+            let src = mediaWorks.childNodes[1].src;
+            let nameSrc =  mediaWorks.childNodes[1].alt;
 
-           
-            let lightBoxMedia = document.getElementById('works_lightbox_media');
+            let dataType = mediaWorks.childNodes[1].getAttribute('data-type');
+            console.log(dataType , nameSrc)
+            let elt = null ;
+            if( dataType == 'image' ) {
+                // console.log('ok img')
+                let eltImage = document.createElement('img');
+                elt = eltImage ;
+            }
+            
+            if( dataType == 'video' ) {
+                // console.log('ok video')
+                let eltVideo = document.createElement('video');
+                eltVideo.setAttribute("controls", "controls");
+                elt = eltVideo ;
+            }
+            
+            elt.setAttribute('src', src);
+            elt.setAttribute('alt', mediaWorks.alt);
+            elt.setAttribute('id' , 'works_lightbox_media');
+
+            console.log(elt)
+
+           //Si image ou si video
+            // let lightBoxMedia = document.getElementById('works_lightbox_media');
             let lightBoxName = document.getElementById('works_lightbox_name');
-            let src = mediaWorks.src;
-            let nameSrc =  mediaWorks.alt;
+           
             this.currentIndex = index;
 
-            console.log(this.currentIndex)
+            // console.log(this.currentIndex)
 
             document.getElementById('works-lightbox').style.display = 'block';
 
             //Ajouter l'image (Vidéo ou Image ?)
-            lightBoxMedia.src = src;
+            lightBoxMedia.innerHTML = '';
+            lightBoxMedia.append(elt);
             lightBoxName.innerHTML = nameSrc;
         }))
 
@@ -198,13 +222,15 @@ function LightboxParam() {
     };
 
     return {
+        // eltImage,
+        // eltVideo,
         getMedias,
         lightBoxDiv,
         currentIndex,
-        // builder,
-        // createimgHTML,
-        // createvidHTML,
-        // renderMedia,
+        builder,
+        createimgHTML,
+        createvidHTML,
+        renderMedia,
         init,
         next,
         previous,
