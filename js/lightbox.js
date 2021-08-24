@@ -4,7 +4,7 @@ function LightboxParam() {
     let getMedias = Array.from(document.getElementsByClassName('ph-media'));
     //console.log(getMedias)
         
-    function init(currentMedia) {
+    function init() {
 
         //cliquer ppour verifier si c'est une video ou une image et creer le html  correspondant.
 
@@ -50,8 +50,8 @@ function LightboxParam() {
 
         }))
 
-        this.previous(document.querySelector('.left-arrow-lightbox'), getMedias, currentMedia);
-        this.next(document.querySelector('.right-arrow-lightbox'), getMedias, currentMedia);
+        this.previous(document.querySelector('.left-arrow-lightbox'), getMedias);
+        this.next(document.querySelector('.right-arrow-lightbox'), getMedias);
         this.close();
         this.keyboard(getMedias);
     };
@@ -59,37 +59,30 @@ function LightboxParam() {
     function previous(elt, media) {
         elt.addEventListener('click', () => {
             this.currentIndex -= 1;
+            let currentMedia = document.getElementById('lightbox_media').childNodes[0];
             let lightBoxMedia = document.getElementById('works_lightbox_media');
             let lightBoxName = document.getElementById('works_lightbox_name');
             let src = media[this.currentIndex].childNodes[1].src;
             let nameSrc = media[this.currentIndex].title;
+            // let dataType = media[this.currentIndex].childNodes[1].getAttribute('data-type');
 
-            console.log(this.currentIndex)
-
-            let dataType = media[this.currentIndex].childNodes[1].getAttribute('data-type');
-
-            // console.log(currentIndex)
+            // console.log(this.currentIndex)
             // console.log(dataType)
-            // console.log( media[this.currentIndex].childNodes[1])
-            console.log(media)
+            // console.log(nameSrc)
 
-            if (this.currentIndex < 0  && dataType == 'image' ) {
+            if (this.currentIndex <= 0 ) {
                 this.currentIndex = media.length - 1;
                 let eltImage = document.createElement('img');
                 elt = eltImage ;
-              } //else if (dataType == 'video') {
-            //     this.currentIndex = media.length - 1;
-            //     let eltVideo = document.createElement('video');
-            //     elt = eltVideo
-            //  }
-
+                console.log(this.currentIndex)
+              }
             // elt.setAttribute('src', src);
             // elt.setAttribute('alt', media.title);
             // elt.setAttribute('id' , 'works_lightbox_media');
 
             
             // console.log(src, nameSrc)
-            // console.log(media[this.currentIndex] , this.currentIndex )
+            currentMedia.setAttribute('alt', nameSrc);
 
             lightBoxMedia.src = src;
             lightBoxName.innerHTML = nameSrc;
@@ -100,15 +93,17 @@ function LightboxParam() {
     function next(elt, media) {
         elt.addEventListener('click', () => {
             this.currentIndex += 1;
+            let currentMedia = document.getElementById('lightbox_media').childNodes[0];
             let lightBoxMedia = document.getElementById('works_lightbox_media');
             let lightBoxName = document.getElementById('works_lightbox_name');
+            let src = media[this.currentIndex].childNodes[1].src;
+            let nameSrc = media[this.currentIndex].title;
 
             if (this.currentIndex > media.length - 1) {
                 this.currentIndex = 0;
             }
 
-            let src = media[this.currentIndex].src;
-            let nameSrc = media[this.currentIndex].alt;
+            currentMedia.setAttribute('alt', nameSrc);
 
             lightBoxMedia.src = src;
             lightBoxName.innerHTML = nameSrc;
