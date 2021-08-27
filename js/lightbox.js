@@ -9,45 +9,15 @@ function LightboxParam() {
         //cliquer ppour verifier si c'est une video ou une image et creer le html  correspondant.
 
         getMedias.forEach((mediaWorks, index) => mediaWorks.addEventListener("click", () => {
-
-            let lightBoxMedia = document.getElementById('lightbox_media');
             let src = mediaWorks.childNodes[1].src;
             let nameSrc =  mediaWorks.title;
-            //console.log(mediaWorks)
             let dataType = mediaWorks.childNodes[1].getAttribute('data-type');
-            //console.log(dataType , nameSrc)
-            let elt = null ;
-            if( dataType == 'image' ) {
-                // console.log('ok img')
-                let eltImage = document.createElement('img');
-                elt = eltImage ;
-            } else if( dataType == 'video' ) {
-                // console.log('ok video')
-                let eltVideo = document.createElement('video');
-                eltVideo.setAttribute("controls", "controls");
-                elt = eltVideo ;
-            }
             
-            elt.setAttribute('src', src);
-            elt.setAttribute('alt', mediaWorks.title);
-            elt.setAttribute('id' , 'works_lightbox_media');
-
-            //console.log(elt)
-
-            let lightBoxName = document.getElementById('works_lightbox_name');
-
+            this.renderView(dataType , src , nameSrc);
             this.currentIndex = index;
 
-           
-            console.log(this.currentIndex)
-
             document.getElementById('works-lightbox').style.display = 'block';
-
-            lightBoxMedia.innerHTML = '';
-            lightBoxMedia.append(elt);
-            lightBoxName.innerHTML = nameSrc;
             this.currentIndex= index;
-
         }))
 
         this.previous(document.querySelector('.left-arrow-lightbox'), getMedias);
@@ -56,36 +26,47 @@ function LightboxParam() {
         this.keyboard(getMedias);
     };
 
+    function renderView(dataType, src, nameSrc) {
+        let lightBoxMedia = document.getElementById('lightbox_media');
+        let lightBoxName = document.getElementById('works_lightbox_name');
+
+        let elt = null ;
+            if( dataType == 'image' ) {
+                // console.log('ok img')
+                let eltImage = document.createElement('img');
+                eltImage.setAttribute('data-type', 'image');
+                elt = eltImage ;
+            } else if( dataType == 'video' ) {
+                // console.log('ok video')
+                let eltVideo = document.createElement('video');
+                eltVideo.setAttribute("controls", "controls");
+                eltVideo.setAttribute('data-type', 'video');
+                elt = eltVideo ;
+            }
+            
+            elt.setAttribute('src', src);
+            elt.setAttribute('alt',nameSrc);
+            elt.setAttribute('id' , 'works_lightbox_media');
+
+            console.log(elt);
+
+            lightBoxMedia.innerHTML = '';
+            lightBoxMedia.append(elt);
+            lightBoxName.innerHTML = nameSrc;
+    };
+
     function previous(elt, media) {
         elt.addEventListener('click', () => {
-            this.currentIndex -= 1;
-            let currentMedia = document.getElementById('lightbox_media').childNodes[0];
-            let lightBoxMedia = document.getElementById('works_lightbox_media');
-            let lightBoxName = document.getElementById('works_lightbox_name');
+            this.currentIndex--;
+            let dataType = media[this.currentIndex].childNodes[1].getAttribute('data-type');
             let src = media[this.currentIndex].childNodes[1].src;
             let nameSrc = media[this.currentIndex].title;
-            // let dataType = media[this.currentIndex].childNodes[1].getAttribute('data-type');
 
-            // console.log(this.currentIndex)
-            // console.log(dataType)
-            // console.log(nameSrc)
+            this.renderView(dataType , src , nameSrc);
 
-            if (this.currentIndex <= 0 ) {
+            if (this.currentIndex <= 0) {
                 this.currentIndex = media.length - 1;
-                let eltImage = document.createElement('img');
-                elt = eltImage ;
-                console.log(this.currentIndex)
-              }
-            // elt.setAttribute('src', src);
-            // elt.setAttribute('alt', media.title);
-            // elt.setAttribute('id' , 'works_lightbox_media');
-
-            
-            // console.log(src, nameSrc)
-            currentMedia.setAttribute('alt', nameSrc);
-
-            lightBoxMedia.src = src;
-            lightBoxName.innerHTML = nameSrc;
+            }
         })
     };
 
@@ -93,20 +74,15 @@ function LightboxParam() {
     function next(elt, media) {
         elt.addEventListener('click', () => {
             this.currentIndex += 1;
-            let currentMedia = document.getElementById('lightbox_media').childNodes[0];
-            let lightBoxMedia = document.getElementById('works_lightbox_media');
-            let lightBoxName = document.getElementById('works_lightbox_name');
+            let dataType = media[this.currentIndex].childNodes[1].getAttribute('data-type');
             let src = media[this.currentIndex].childNodes[1].src;
             let nameSrc = media[this.currentIndex].title;
+
+            this.renderView(dataType , src , nameSrc);
 
             if (this.currentIndex > media.length - 1) {
                 this.currentIndex = 0;
             }
-
-            currentMedia.setAttribute('alt', nameSrc);
-
-            lightBoxMedia.src = src;
-            lightBoxName.innerHTML = nameSrc;
         })
     };
 
@@ -162,6 +138,7 @@ function LightboxParam() {
     return {
         currentIndex,
         init,
+        renderView,
         next,
         previous,
         close,
