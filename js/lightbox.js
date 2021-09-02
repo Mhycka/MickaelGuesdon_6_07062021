@@ -48,7 +48,7 @@ function LightboxParam() {
             elt.setAttribute('alt',nameSrc);
             elt.setAttribute('id' , 'works_lightbox_media');
 
-            console.log(elt);
+            // console.log(elt);
 
             lightBoxMedia.innerHTML = '';
             lightBoxMedia.append(elt);
@@ -73,14 +73,14 @@ function LightboxParam() {
 
     function next(elt, media) {
         elt.addEventListener('click', () => {
-            this.currentIndex += 1;
+            this.currentIndex ++;
             let dataType = media[this.currentIndex].childNodes[1].getAttribute('data-type');
             let src = media[this.currentIndex].childNodes[1].src;
             let nameSrc = media[this.currentIndex].title;
 
             this.renderView(dataType , src , nameSrc);
 
-            if (this.currentIndex > media.length - 1) {
+            if (this.currentIndex >= media.length - 1) {
                 this.currentIndex = 0;
             }
         })
@@ -94,43 +94,36 @@ function LightboxParam() {
         })
     };
 
-    function keyboard(currentMedia, currentMediaName) {
+    function keyboard(media) {
         document.addEventListener('keydown', (key) => {
-            let lightBoxMedia = document.getElementById('works-lightbox-media');
-            let lightBoxName = document.getElementById('works-lightbox-name');
+            let dataType = media[this.currentIndex].childNodes[1].getAttribute('data-type');
+            let src = media[this.currentIndex].childNodes[1].src;
+            let nameSrc = media[this.currentIndex].title;
+
+            console.log(dataType,src,nameSrc)
+
+            this.renderView(dataType , src , nameSrc);
 
             if (key.code == "Escape") {
                 let lightBox = document.getElementById('works-lightbox');
                 lightBox.style.display = 'none';
             }
 
+            
             else if (key.code == "ArrowRight") {
-                this.currentIndex += 1;
+                this.currentIndex ++;
 
-                if (this.currentIndex > currentMediaName.length - 1) {
+                if (this.currentIndex >= media.length - 1) {
                     this.currentIndex = 0;
                 }
-
-                let src = currentMedia[this.currentIndex];
-                let nameSrc = currentMediaName[this.currentIndex];
-
-                lightBoxMedia.innerHTML = `${src}`;
-                lightBoxName.innerHTML = `${nameSrc}`;
             }
 
             else if (key.code == "ArrowLeft") {
-                this.currentIndex -= 1;
+                this.currentIndex --;
 
-                if (this.currentIndex < 0) {
-                    this.currentIndex = currentMedia.length - 1;
-                    this.currentIndex = currentMediaName.length - 1;
+                if (this.currentIndex <= 0) {
+                    this.currentIndex = media.length - 1;
                 }
-
-                let src = currentMedia[this.currentIndex];
-                let nameSrc = currentMediaName[this.currentIndex];
-
-                lightBoxMedia.innerHTML = `${src}`;
-                lightBoxName.innerHTML = `${nameSrc}`;
             }
         });
     };
