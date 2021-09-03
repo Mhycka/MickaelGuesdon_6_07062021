@@ -1,5 +1,8 @@
 
 function Media () {
+
+    const totalLike = 0;
+
     function createimgHTML(element , name) {
         let eltImage = document.createElement('img');
         eltImage.setAttribute('src', `medias/${name}/${element.image}`);
@@ -25,7 +28,7 @@ function Media () {
 
     function renderMedia(element , name) {
         // console.log(element.hasOwnProperty('image'))
-        //  console.log(element)
+        console.log(element)
         //  console.log(name)
         let factory = null;
         if (element.hasOwnProperty('image')) {
@@ -38,10 +41,10 @@ function Media () {
 
     function builder(dataMedias, photographe , id) {
         dataMedias.forEach(element => {
-            // console.log(element)
             if (id == element.photographerId) {
                 let sectionPhWorks = document.getElementById('ph-works');
                 let articlePhWork = document.createElement("article");
+                let box = document.getElementById('box');
 
                 let mediaFactory = this.renderMedia(element , photographe.name);
                 // console.log(mediaFactory)
@@ -61,15 +64,26 @@ function Media () {
                     </div>
                 </div>                
                 `
+                let boxTemplate = `
+                <span id="total-likes">${this.totalLike}</span>
+                <i class="fas fa-heart" aria-label='likes'></i>
+                <span>${element.price} €/ jour</span>
+                `
+
                 articlePhWork.innerHTML = workTemplate;
                 sectionPhWorks.appendChild(articlePhWork);
-
+                // console.log(this.totalLike, element)
                 articlePhWork.classList.add("ph-work-elt");
+
+                this.totalLike += parseInt(element.likes);                
+                box.innerHTML = boxTemplate;
             }
+
         })
     };
     
     return {
+        totalLike,
         createimgHTML,
         createvidHTML,
         renderMedia,

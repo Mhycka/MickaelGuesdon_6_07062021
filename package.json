@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "6 ème projet",
   "main": "index.js",
-  "dependencies": {
-    "eslint": "^7.28.0"
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.32.0"
   },
-  "devDependencies": {},
   "scripts": {
     "sass": "sass --watch ./sass/app.scss:css/style.css --style compressed",
     "prefix": "postcss css/style.css --use autoprefixer -d css/prefixed/"

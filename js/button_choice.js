@@ -1,8 +1,11 @@
+// eslint-disable-next-line no-unused-vars
 function buttonChoice() {
     
+    // eslint-disable-next-line no-unused-vars
     let data = [];
     let photographe = [];
     let photographeID = [];
+    // eslint-disable-next-line no-unused-vars
     let MediaFactory = null;
 
     function init(data, photographe, photographeID , MediaFactory){
@@ -31,7 +34,7 @@ function buttonChoice() {
                 hiddenSort[0].style.display = "none";
             });
         }
-    };
+    }
 
     // SORT MEDIAS (POPULARITY, DATA, TITLE)
     function sortMedias(datas) {
@@ -75,7 +78,7 @@ function buttonChoice() {
 
             this.displaySortMedia(mediaArraySort);
         }));
-    };
+    }
 
     function displaySortMedia(mediaArraySort) {
         // DISPLAY PHOTOGRAPHERS WORKS WITH SORT
