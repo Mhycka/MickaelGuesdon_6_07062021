@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 let myUrl = 'Data/FisheyeData.json';
 fetch(myUrl , {method : "GET"})
 .then(data => {

@@ -1,3 +1,4 @@
+/* exported Form */
 function Form() {
     function fields() {
         // DOM ELEMENTS FORM FIELDS VALIDATION
@@ -27,7 +28,7 @@ function Form() {
                 this.errorVerification(firstName, lastName, email, message, regex);
             }
         });
-    };
+    }
 
     function consoleMessageValid(firstName, lastName, email, message) {
         console.group('Contact Message');
@@ -36,14 +37,14 @@ function Form() {
         console.log('Email : ' + email.value);
         console.log('Message : ' + message.value);
         console.groupEnd();
-    };
+    }
 
     function errorVerification(firstName, lastName, email, message, regex) {
         this.checkNames(firstName, regex);
         this.checkNames(lastName, regex);
         this.checkEmail(email);
         this.checkMessage(message);
-    };
+    }
 
     // Check FirstName and LastName
     function checkNames(elt, regex) {
@@ -56,7 +57,7 @@ function Form() {
             elt.style.border = 'solid #279e7a 0.19rem';
             return true;
         }
-    };
+    }
 
     function checkEmail(elt) {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -68,7 +69,7 @@ function Form() {
         elt.parentElement.setAttribute('data-error-visible', 'true');
         elt.style.border = '2px solid #e54858';
         return false;
-    };
+    }
 
     function checkMessage(elt) {
         if (elt.value.trim() === '' || elt.value.trim() == null) {
@@ -79,7 +80,7 @@ function Form() {
         elt.parentElement.setAttribute('data-error-visible', 'false');
         elt.style.border = 'solid #279e7a 0.19rem';
         return true;
-    };
+    }
 
     return {
         fields,
@@ -91,6 +92,7 @@ function Form() {
     }
 }
 
+/* exported modalparam*/
 function modalparam() {
     function modal(data) {
         let modalBtn = document.getElementById("ph-contact");

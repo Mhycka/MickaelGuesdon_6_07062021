@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 let myUrl = 'Data/FisheyeData.json';
 fetch(myUrl , {method : "GET"})
 .then(data => {
@@ -38,9 +39,7 @@ fetch(myUrl , {method : "GET"})
 
     const myFilters = filters(); 
     myFilters.filterTags();
-    //myFilters.builderTags(dataPhotographers);
-    // myFilters.addTagParamToURL();
 
-    //const myfiltresPh = filtresPh(); 
-    //myfiltresPh.filtertagPh();
+    const scroll = scrollElt();
+    scroll.checkPage();
 })

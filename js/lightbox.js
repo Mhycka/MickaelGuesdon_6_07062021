@@ -1,3 +1,4 @@
+/* exported LightboxParam*/
 function LightboxParam() {
 
     const currentIndex = 0;
@@ -24,7 +25,7 @@ function LightboxParam() {
         this.next(document.querySelector('.right-arrow-lightbox'), getMedias);
         this.close();
         this.keyboard(getMedias);
-    };
+    }
 
     function renderView(dataType, src, nameSrc) {
         let lightBoxMedia = document.getElementById('lightbox_media');
@@ -53,7 +54,7 @@ function LightboxParam() {
             lightBoxMedia.innerHTML = '';
             lightBoxMedia.append(elt);
             lightBoxName.innerHTML = nameSrc;
-    };
+    }
 
     function previous(elt, media) {
         elt.addEventListener('click', () => {
@@ -68,7 +69,7 @@ function LightboxParam() {
                 this.currentIndex = media.length - 1;
             }
         })
-    };
+    }
 
 
     function next(elt, media) {
@@ -84,7 +85,7 @@ function LightboxParam() {
                 this.currentIndex = 0;
             }
         })
-    };
+    }
 
     function close() {
         document.querySelector('.close-lightbox-icon').addEventListener('click', () => {
@@ -92,7 +93,7 @@ function LightboxParam() {
 
             lightbox.style.display = 'none';
         })
-    };
+    }
 
     function keyboard(media) {
         document.addEventListener('keydown', (key) => {
@@ -100,7 +101,7 @@ function LightboxParam() {
             let src = media[this.currentIndex].childNodes[1].src;
             let nameSrc = media[this.currentIndex].title;
 
-            console.log(dataType,src,nameSrc)
+            // console.log(dataType,src,nameSrc)
 
             this.renderView(dataType , src , nameSrc);
 
@@ -126,7 +127,7 @@ function LightboxParam() {
                 }
             }
         });
-    };
+    }
 
     return {
         currentIndex,

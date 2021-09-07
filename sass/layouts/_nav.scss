@@ -1,0 +1,24 @@
+nav{
+    ul{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        left: 0;
+        list-style: none;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 55px;
+    }
+
+    a {
+        color: $primary-color;
+            
+        &:before {
+                content: "#";
+        }
+    }
+}

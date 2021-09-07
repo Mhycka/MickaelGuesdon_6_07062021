@@ -1,4 +1,5 @@
-
+/* eslint-disable no-prototype-builtins */
+/* exported Media */
 function Media () {
 
     const totalLike = 0;
@@ -28,7 +29,7 @@ function Media () {
 
     function renderMedia(element , name) {
         // console.log(element.hasOwnProperty('image'))
-        console.log(element)
+        // console.log(element)
         //  console.log(name)
         let factory = null;
         if (element.hasOwnProperty('image')) {
@@ -80,7 +81,7 @@ function Media () {
             }
 
         })
-    };
+    }
     
     return {
         totalLike,

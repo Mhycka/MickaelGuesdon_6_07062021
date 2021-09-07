@@ -1,3 +1,4 @@
+/* exported likes */
 function likes () {
 
      function likesParam() {
@@ -25,8 +26,8 @@ function likes () {
                 }
             }
         })
-    };
+    }
     return {
         likesParam,
     }
-};
+}

@@ -9,7 +9,8 @@
   },
   "scripts": {
     "sass": "sass --watch ./sass/app.scss:css/style.css --style compressed",
-    "prefix": "postcss css/style.css --use autoprefixer -d css/prefixed/"
+    "prefix": "postcss css/style.css --use autoprefixer -d css/prefixed/",
+    "lint" : "eslint ./"
   },
   "repository": {
     "type": "git",
