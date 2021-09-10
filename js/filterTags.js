@@ -1,16 +1,30 @@
+// Je vérifie la variable d'URL "tag"
+// Si elle est vide rien faire
+//     -Afficher tous les photographes
+// Si il y en a une
+//     Tag = portrait
+//         -Afficher que les photographe  Tag = portrait
+//             -Tableua de donné trié
+//                 -Afficher en html
+//         -Ajouter a touts les class portrait la class actived
+
+
+
 /* exported filters*/
+
 function filters () {
     let filters = document.querySelectorAll(' li a');
     let articles = document.querySelectorAll('.cardphotograph');
+    // let filtersReturn = document.querySelectorAll('.ph-infos a');
 
     function filterTags (){
         
         this.filters.forEach(filter => {
             filter.addEventListener("click", event =>{
                 let elt = event.target.dataset.filter;
-                //console.log(elt)
-                //console.log(event)
-                //console.log(event.target)
+                // console.log(elt)
+                // console.log(event)
+                // console.log(event.target)
                 let tags = document.querySelectorAll('[data-filter]');
 
                 tags.forEach(tag => { 
@@ -60,12 +74,33 @@ function filters () {
         });
     }
 
+    // function returnFilersPage() {
+    //     this.filtersReturn.forEach(filter => {
+    //         filter.addEventListener("click", event =>{
+    //             let elt = event.target.dataset.filter;
+    //             console.log(elt)
+    //             let tags = document.querySelectorAll('[data-filter]');
+    //             console.log(tags)
+
+    //             tags.forEach(tag => { 
+    //                 let tagAll = tag.dataset.filter;
+    //                 console.log(tagAll.index)
+    //      
+    //             })
+
+    //             this.filterTags();
+    //         })
+    //     });
+    // }
+
     return {
         filters,
         articles,
+        // filtersReturn,
         filterTags,
         domArticles,
         eachFilters,
-        activeFilters
+        activeFilters,
+        // returnFilersPage
     }
 }

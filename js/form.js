@@ -37,6 +37,8 @@ function Form() {
         console.log('Email : ' + email.value);
         console.log('Message : ' + message.value);
         console.groupEnd();
+
+        this.closeModal();
     }
 
     function errorVerification(firstName, lastName, email, message, regex) {
@@ -44,6 +46,7 @@ function Form() {
         this.checkNames(lastName, regex);
         this.checkEmail(email);
         this.checkMessage(message);
+        
     }
 
     // Check FirstName and LastName
@@ -82,13 +85,21 @@ function Form() {
         return true;
     }
 
+    // CLOSE MODAL
+    function closeModal() {
+        let modalbg = document.getElementById("form-dialog");
+    
+        modalbg.style.display = 'none';
+    }
+
     return {
         fields,
         consoleMessageValid,
         errorVerification,
         checkNames,
         checkEmail,
-        checkMessage
+        checkMessage,
+        closeModal
     }
 }
 
@@ -97,14 +108,14 @@ function modalparam() {
     function modal(data) {
         let modalBtn = document.getElementById("ph-contact");
         let closeBtn = document.getElementsByClassName('close-form-icon');
+
     
         if (modalBtn) {
             modalBtn.addEventListener('click', this.launchModal);
             this.formPhName(data);
-        }
-        if (closeBtn) {
+        } if (closeBtn) {
             closeBtn[0].addEventListener('click', this.closeModal);
-        }
+        } 
     }
     
     // LAUNCH MODAL

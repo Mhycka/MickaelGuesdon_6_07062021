@@ -56,7 +56,6 @@ function Media () {
                 </a>
                 <div class="ph-work-elt-text">
                     <h2 class="ph-work-title">${element.title}</h2>
-                    <span class="ph-work-price">${element.price} €</span>
                     <div class='ph-elt-like'>
                     <span class="ph-work-like">
                         <a class="like-counter">${element.likes}</a>
@@ -68,7 +67,7 @@ function Media () {
                 let boxTemplate = `
                 <span id="total-likes">${this.totalLike}</span>
                 <i class="fas fa-heart" aria-label='likes'></i>
-                <span>${element.price} €/ jour</span>
+                <span>${photographe.price} €/ jour</span>
                 `
 
                 articlePhWork.innerHTML = workTemplate;

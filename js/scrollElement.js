@@ -13,10 +13,10 @@ function scrollElt () {
       const linkElt = document.getElementById("link-content");
       const bannerElt = document.getElementById("header-banner");
     
-      if (window.scrollY >= bannerElt.offsetHeight - 20) {
+      if (window.scrollY >= bannerElt.offsetHeight) {
         linkElt.style.top = "6px";
       }
-      if (window.scrollY < bannerElt.offsetHeight - 20) {
+      if (window.scrollY < bannerElt.offsetHeight) {
         linkElt.style.top = "-100px";
       }
     }

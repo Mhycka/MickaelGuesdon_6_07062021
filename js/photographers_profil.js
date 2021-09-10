@@ -20,7 +20,7 @@ fetch(myUrl , {method : "GET"})
                 <h2>${photographers[0].name}</h2>
                 <p class="ph-city">${photographers[0].city}, ${photographers[0].country}</p>
                 <p class="ph-tagline">${photographers[0].tagline}</p>
-                <p >${photographers[0].tags.map(tag => `<a class="tags-Phpage" href="index.html">#${tag}</a>`).join(" ")}</p>
+                <p >${photographers[0].tags.map(tag => `<a class="tags-Phpage ${tag}" data-filter="${tag}" href="index.html">#${tag}</a>`).join(" ")}</p>
             </div>
             <button id="ph-contact" title='Contact Me'>Contactez-moi</button>
             <a href='#' title='${photographers[0].alt}'><img src="${photographers[0].portrait}" alt="${photographers[0].alt}"></a>
@@ -37,6 +37,9 @@ fetch(myUrl , {method : "GET"})
 
     const FormData = Form();
     FormData.fields();
+
+    // const myFilters = filters(); 
+    // myFilters.returnFilersPage();
 
     const Lightbox = LightboxParam();
     Lightbox.init();

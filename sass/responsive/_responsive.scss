@@ -1,34 +1,67 @@
-// /*------format smartphone------*/
-// @media (min-width: 576px) {
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
     
-// /*--------------------------------PAGE ACCUEIL--------------------------------*/
-
-
-// }
-// /*--------format tablet------*/
-// @media (min-width: 1170px) {
-
-// /*-------------------------------PAGE ACCUEIL---------------------------------*/
+/*-------------------------------PAGE ACCUEIL---------------------------------*/
         
-//     header {
-//         margin-top: 0;
+}
 
-//         h1 {
-//             font-size: 1.8em;
-//         }
 
-//         img {
-//             width: 12.5rem;
-//         }
+
+/*------format smartphone------*/
+@media (max-width: 576px) {
+    /*-----------------------------------BASE------------------------------------*/
+    body {
+        margin: 0 1rem;
+    }
+    
+    /*--------------------------------PAGE ACCUEIL--------------------------------*/
+    header {        
+        img{
+            width: 9rem;
+        }
         
-//         nav {
-//             a {
-//                 margin-bottom: 0;
-//             }
+        h1 {
+            font-size: 14px;
+        }
+    }
 
-//             ul{
-//                 top: 22px;
-//             }
-//         }
-//     }
-// }
+    nav{
+        ul{
+            top: 100px;
+
+            li{
+                font-size: 12px;
+                margin-bottom: 0.4rem;
+            }
+        }
+    }
+
+    .name{
+        font-size: 36px;
+    }
+
+    .location , .tagline {
+        font-size: 13px;
+    }
+
+    .price {
+        font-size: 10px;
+    }
+
+
+
+    /*--------------------------------PAGE PHOTOGRAPHER--------------------------------*/
+    .ph-infos{
+        h2{
+            font-size: 36px;
+        }
+    }
+
+    .ph-profil{
+        img{
+            height: 100px;
+            width: 100px;
+        }
+    }
+}
