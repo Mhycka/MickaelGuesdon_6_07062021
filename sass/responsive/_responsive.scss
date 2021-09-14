@@ -36,7 +36,88 @@
         margin-bottom: 1em;
         width: 20rem;
     }
+
+    /*--------------------------------PAGE PHOTOGRAPHER--------------------------------*/
+    .ph-profil{
+        button{
+            position: fixed;
+            font-size: 18px;
+            height: 40px;
+            left: 5.5em;
+            top: inherit;
+            bottom: 2%;
+        }
+    }
+
+    .ph-work-elt {
+        width: 19em;
+    }
+
+    #box {
+        height: 3rem;
+        width: 12em;
+        bottom: 20px;
+        .fa-heart{
+            padding-left: 15px;
+        }
+    }
+
+    /* Modal*/
+    #form-dialog{
+        position: fixed;
+        top: 10%;
+        #close-btn{
+            padding-top: 20%;
+        }
+    }
+
+    form {
+        height: 100%;
+        .close-form-icon{
+            bottom: 100px;
+        }
+        header{
+            padding-top: 3%;
+            margin-bottom: 0;
+        }
+        h1{
+            font-size: 50px;
+            color: rgb(255, 255, 255);
+        }
+        label {
+            font-size: 24px;
+            margin-bottom: 0.2em;
+        }
+        .form-submit{
+            font-size: 18px;
+            height : 35px;
+            margin-left: 35%;
+            margin-bottom: 5%;
+            margin-top: 5%;
+            padding:0.5em;
+        }
+        input{
+            padding: 0.8rem;
+        }
+    }
+
+    /*Lightbox*/
+    #lightbox-body{
+        top: 150px;
+        height: auto;
+        text-align: start;
+
+        .close-lightbox-icon{
+            top: auto;
+            font-size: 1.2em;
+        }
+
+        #works_lightbox_name{
+            font-size: 14px;
+        }
+    }
 }
+
 
 
 
@@ -121,7 +202,6 @@
             left: 5.5em;
             top: inherit;
             bottom: 2%;
-
         }
     }
     /* Modal*/
