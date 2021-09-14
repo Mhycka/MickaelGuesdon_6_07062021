@@ -3,7 +3,8 @@ let myUrl = 'Data/FisheyeData.json';
 fetch(myUrl , {method : "GET"})
 .then(data => {
     return data.json()
-}).then(datas =>{
+})
+.then(datas =>{
 
     // const URLParam = new URLSearchParams(window.location.search)
     // const id = URLParam.get('tags');
