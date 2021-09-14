@@ -3,9 +3,8 @@ let myUrl = 'Data/FisheyeData.json';
 fetch(myUrl , {method : "GET"})
 .then(data => {
     return data.json()
-})
-.then(datas =>{
-    
+}).then(datas =>{
+
     let dataPhotographers = datas.photographers
     let sectionPhotographers = document.getElementById('photographers');
 
