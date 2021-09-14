@@ -5,12 +5,7 @@ fetch(myUrl , {method : "GET"})
     return data.json()
 })
 .then(datas =>{
-
-    // const URLParam = new URLSearchParams(window.location.search)
-    // const id = URLParam.get('tags');
-
-    // //const photographers = !tags ? dataPhotographers : dataPhotographers.filter(photographer => photographer.tags == tags);
-
+    
     let dataPhotographers = datas.photographers
     let sectionPhotographers = document.getElementById('photographers');
 
