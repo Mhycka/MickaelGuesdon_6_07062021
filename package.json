@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "description": "6 ème projet",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "postinstall": "^0.7.3"
+  },
   "devDependencies": {
     "eslint": "^7.32.0"
   },
   "scripts": {
     "sass": "sass --watch ./sass/app.scss:css/style.css --style compressed",
     "prefix": "postcss css/style.css --use autoprefixer -d css/prefixed/",
-    "lint" : "eslint ./"
+    "lint": "eslint ./"
   },
   "repository": {
     "type": "git",

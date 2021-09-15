@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
-let myUrl = 'Data/FisheyeData.json';
-fetch(myUrl , {method : "GET"})
+// let myUrl = 'Data/FisheyeData.json';
+// fetch(myUrl , {method : "GET"})
+fetch('public/FisheyeData.json')
 .then(data => {
     return data.json()
 }).then(datas =>{
