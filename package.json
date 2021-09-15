@@ -4,10 +4,13 @@
   "description": "6 ème projet",
   "main": "index.js",
   "dependencies": {
+    "cson-parser": "^4.0.9",
     "postinstall": "^0.7.3"
   },
   "devDependencies": {
-    "eslint": "^7.32.0"
+    "eslint": "^7.32.0",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0"
   },
   "scripts": {
     "sass": "sass --watch ./sass/app.scss:css/style.css --style compressed",
