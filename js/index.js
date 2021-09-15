@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
-let myUrl = 'mhycka.github.io/MickaelGuesdon_6_07062021/Data/FisheyeData.json';
-fetch(myUrl , {method : "GET"})
+// let myUrl = 'Data/FisheyeData.json';
+// fetch(myUrl , {method : "GET"})
+fetch('mhycka.github.io/MickaelGuesdon_6_07062021/Data/FisheyeData.json')
 .then(data => {
     return data.json()
 }).then(datas =>{
