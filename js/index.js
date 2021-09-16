@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-let myUrl = 'https://mhycka.github.io/MickaelGuesdon_6_07062021/Data/FisheyeData.json';
+let myUrl = 'Data/FisheyeData.json';
 fetch(myUrl , {method : "GET"})
 .then(data => {
     return data.json()
