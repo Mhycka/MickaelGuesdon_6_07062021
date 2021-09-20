@@ -3,10 +3,10 @@
 //     -Afficher tous les photographes
 // Si il y en a une
 //     Tag = portrait
-//         -Afficher que les photographe  Tag = portrait
-//             -Tableua de donné trié
+//         -Afficher que les photographes  Tag = portrait
+//             -Tableau de données triées
 //                 -Afficher en html
-//         -Ajouter a touts les class portrait la class actived
+//         -Ajouter a toutes les classes portrait la classe actived
 
 
 
